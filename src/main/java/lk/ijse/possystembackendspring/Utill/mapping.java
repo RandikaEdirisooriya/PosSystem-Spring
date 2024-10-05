@@ -1,9 +1,8 @@
 package lk.ijse.possystembackendspring.Utill;
 
-import lk.ijse.springday3.Dto.Impl.NoteDto;
-import lk.ijse.springday3.Dto.Impl.UserDto;
-import lk.ijse.springday3.Entity.NoteEntity;
-import lk.ijse.springday3.Entity.UserEntity;
+
+import lk.ijse.possystembackendspring.Dto.Impl.CustomerDto;
+import lk.ijse.possystembackendspring.Entity.Customer;
 import org.modelmapper.ModelMapper;
 import org.modelmapper.TypeToken;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,24 +15,9 @@ public class mapping {
     @Autowired
     private ModelMapper modelMapper;
 
-    public UserEntity toUserEntity(UserDto userDto){
-        return modelMapper.map(userDto, UserEntity.class);
-    }
-    public UserDto toUserDto(UserEntity userEntity){
-        return modelMapper.map(userEntity, UserDto.class);
-    }
-    public List<UserDto> asUserDtoList(List<UserEntity> userEntityList){
-        return modelMapper.map(userEntityList,new TypeToken<List<UserDto>>(){}.getType());
-    }
-    public NoteEntity toNoteEntity(NoteDto noteDto){
-        return modelMapper.map(noteDto, NoteEntity.class);
-    }
-    public NoteDto toNoteDto(NoteEntity noteEntity){
-        return modelMapper.map(noteEntity, NoteDto.class);
-    }
 
-    public List<NoteDto> asNoteDtoList(List<NoteEntity> noteEntityList){
-        return modelMapper.map(noteEntityList,new TypeToken<List<NoteDto>>(){}.getType());
+    public Customer toCustomerEntity(CustomerDto customerDto){
+        return modelMapper.map(customerDto, Customer.class);
     }
 
 

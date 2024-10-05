@@ -17,26 +17,23 @@ import javax.sql.DataSource;
 
 @Configuration
 
-/*@EnableJpaRepositories(basePackages = "lk.ijse.springday3.dao")*/
+@EnableJpaRepositories(basePackages = "lk.ijse.possystembackendspring.dao")
 @EnableTransactionManagement
 @ComponentScan(basePackages = "lk.ijse")
 public class WebAppRootConfig {
-/*
-*//*oni database ek set karaganne meken*//*
+
         @Bean
         public DataSource dataSource() {
 
 
            var dbms= new DriverManagerDataSource();
            dbms.setDriverClassName("com.mysql.cj.jdbc.Driver");
-           dbms.setUrl("jdbc:mysql://localhost:3306/notecollection?createDatabaseIfNotExist=true");
+           dbms.setUrl("jdbc:mysql://localhost:3306/PosSpring?createDatabaseIfNotExist=true");
            dbms.setUsername("root");
            dbms.setPassword("1234");
            return dbms;
         }
-*//*
-ORM sambanda configuration thamai methana thiyennee
-*//*
+
         @Bean
         public LocalContainerEntityManagerFactoryBean entityManagerFactory() {
 
@@ -45,11 +42,11 @@ ORM sambanda configuration thamai methana thiyennee
 
             LocalContainerEntityManagerFactoryBean factory = new LocalContainerEntityManagerFactoryBean();
             factory.setJpaVendorAdapter(vendorAdapter);
-            factory.setPackagesToScan("lk.ijse.springday3.Entity");
+            factory.setPackagesToScan("lk.ijse.possystembackendspring.Entity");
             factory.setDataSource(dataSource());
             return factory;
         }
-*//**//*
+
         @Bean
         public PlatformTransactionManager transactionManager(EntityManagerFactory entityManagerFactory) {
 
@@ -57,9 +54,11 @@ ORM sambanda configuration thamai methana thiyennee
             txManager.setEntityManagerFactory(entityManagerFactory);
             return txManager;
         }
-    @Bean
-    public ModelMapper modelMapper(){
-        return new ModelMapper();
-    }*/
+
+
+@Bean
+public ModelMapper modelMapper() {
+    return new ModelMapper();
+}
     }
 

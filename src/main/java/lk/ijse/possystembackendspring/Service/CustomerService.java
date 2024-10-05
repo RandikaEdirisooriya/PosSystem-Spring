@@ -1,4 +1,7 @@
 package lk.ijse.possystembackendspring.Service;
 
-public class CustomerService {
+import lk.ijse.possystembackendspring.Dto.Impl.CustomerDto;
+
+public interface CustomerService {
+    void saveCustomer(CustomerDto customerDto);
 }
