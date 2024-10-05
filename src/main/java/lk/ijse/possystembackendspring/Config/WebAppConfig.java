@@ -7,7 +7,7 @@ import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 
 @Configuration
 @ComponentScan(basePackages = "lk.ijse")
-@EnableWebMvc
+@EnableWebMvc/*meka*/
 @MultipartConfig(fileSizeThreshold = 1,maxFileSize = 1024*1024*5,maxRequestSize = 10)
 public class WebAppConfig {
 }
