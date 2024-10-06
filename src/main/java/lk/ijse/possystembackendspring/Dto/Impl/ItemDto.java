@@ -4,14 +4,12 @@ import lk.ijse.possystembackendspring.Dto.ControllerStatus;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-
-@AllArgsConstructor
 @NoArgsConstructor
+@AllArgsConstructor
 @Data
-public class CustomerDto implements ControllerStatus {
+public class ItemDto implements ControllerStatus {
    private String id;
    private String name;
-   private String address;
-   private String contact;
-   private String email;
+   private double price;
+   private int qty;
 }

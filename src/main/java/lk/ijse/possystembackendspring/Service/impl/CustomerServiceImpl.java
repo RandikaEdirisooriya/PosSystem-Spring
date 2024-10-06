@@ -2,7 +2,7 @@ package lk.ijse.possystembackendspring.Service.impl;
 
 import jakarta.transaction.Transactional;
 import lk.ijse.possystembackendspring.CustomStatusCode.SelectedControllerStatus;
-import lk.ijse.possystembackendspring.Dto.CustomerStatus;
+import lk.ijse.possystembackendspring.Dto.ControllerStatus;
 import lk.ijse.possystembackendspring.Dto.Impl.CustomerDto;
 import lk.ijse.possystembackendspring.Entity.Customer;
 import lk.ijse.possystembackendspring.Exception.DataPersistException;
@@ -36,7 +36,7 @@ public class CustomerServiceImpl implements CustomerService {
     }
 
     @Override
-    public CustomerStatus getSelectedCustomer(String id) {
+    public ControllerStatus getSelectedCustomer(String id) {
         if (customerDao.existsById(id)) {
             var selectedCustomer = customerDao.getReferenceById(id);
             return mapping.toCustomerDto(selectedCustomer);
