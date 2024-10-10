@@ -2,10 +2,13 @@ package lk.ijse.possystembackendspring.Entity;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+
+import java.util.List;
 
 @AllArgsConstructor
 @NoArgsConstructor
@@ -19,4 +22,6 @@ public class Customer implements SuperEntity {
     private String address;
     private String contact;
     private String email;
+    @OneToMany(mappedBy = "customer")
+    private List<Orders> orders;
 }

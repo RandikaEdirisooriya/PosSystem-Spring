@@ -1,11 +1,11 @@
 package lk.ijse.possystembackendspring.Entity;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+
+import java.util.List;
 
 @AllArgsConstructor
 @NoArgsConstructor
@@ -18,4 +18,7 @@ public class Item implements SuperEntity{
     private String name;
     private double price;
     private int qty;
+    // Many-to-Many relationship with Order through OrderDetail
+    @OneToMany(mappedBy = "item", cascade = CascadeType.ALL,fetch = FetchType.EAGER)
+    private List<OrderDetail> orderDetails;
 }
