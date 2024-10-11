@@ -10,6 +10,12 @@ public class AppUtil {
     public static String genereteItemId(){
         return "ITEM-"+UUID.randomUUID();
     }
+    public static String genereteOrderId(){
+        return "ORDER-"+UUID.randomUUID();
+    }
+    public static String genereteOrderDetailId(){
+        return "ORDER-DETAIL-"+UUID.randomUUID();
+    }
 
     public static String genereteUserId() {
         return "USER-"+UUID.randomUUID();

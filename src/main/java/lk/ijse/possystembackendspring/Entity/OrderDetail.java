@@ -13,7 +13,7 @@ import lombok.NoArgsConstructor;
 public class OrderDetail {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private int id;
 
     // Many OrderDetails belong to one Order
     @ManyToOne
