@@ -25,7 +25,7 @@ public class ItemController {
     @PostMapping("/saveItem")
     public ResponseEntity<Void> saveItem(@RequestBody ItemDto itemDto) {
         try {
-            itemDto.setId(AppUtil.genereteItemId());
+      itemDto.setId(AppUtil.genereteItemId());
             System.out.println("C-"+itemDto);
             itemService.saveItem(itemDto);
 
